@@ -1,4 +1,4 @@
-package com.rovio.compiler.util;
+package com.rovio.scratch_interpreter.util;
 
 import java.awt.Image;
 import java.util.ArrayList;
