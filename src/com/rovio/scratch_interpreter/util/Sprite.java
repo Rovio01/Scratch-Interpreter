@@ -8,6 +8,7 @@ public class Sprite {
 	
 	private List<Script> scripts = new ArrayList<Script>();
 	
+	private Variable[] variables;
 	private List<Image> costumes=new ArrayList<Image>();
 	private int currentCostume;
 	private int x;

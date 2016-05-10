@@ -13,7 +13,7 @@ public class Script {
 		}
 	}
 	
-	public void tryExecute() {
+	public void runIfHeader() {
 		if (header.doExecute()) {
 			run();
 		}
