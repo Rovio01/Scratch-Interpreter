@@ -1,19 +1,23 @@
 package com.rovio.scratch_interpreter.util;
 
-public class Variable<E> {
-	private E data;
+public class Variable {
+	private String data;
+	private String name;
 	
-	public Variable(E data) {
-		this.data=data;
+	public Variable(String name) {
+		this.name=name;
 	}
 
-	public E getData() {
+	public String getData() {
 		return data;
 	}
 
-	public void setData(E data) {
+	public Variable setData(String data) {
 		this.data = data;
+		return this;
 	}
 	
-	
+	public String getName() {
+		return name;
+	}
 }

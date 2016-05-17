@@ -1,8 +1,9 @@
 package com.rovio.scratch_interpreter.util;
 
-import com.rovio.scratch_interpreter.util.slots.Slot;
-
 public abstract class Block {
-	private Slot[] parameters;
+	private Sprite inside;
 	public abstract void run();
+	public Sprite getSprite() {
+		return inside;
+	}
 }

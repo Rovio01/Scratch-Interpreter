@@ -11,13 +11,14 @@ public class Sprite {
 	private Variable[] variables;
 	private List<Image> costumes=new ArrayList<Image>();
 	private int currentCostume;
-	private int x;
-	private int y;
+	private double x;
+	private double y;
 	private double size;
 	private int color;
 	private int penColor;
 	private boolean visible;
 	private boolean penDown;
+	private double direction;
 	
 	public Sprite() {
 		currentCostume=0;
@@ -29,28 +30,43 @@ public class Sprite {
 		visible=true;
 		penDown=false;
 	}
+	
+	public void executeScripts() {
+		for (Script s:scripts) {
+			s.runIfHeader();
+		}
+	}
+	
+	public Variable getVariable(String name) {
+		for (Variable v:variables) {
+			if (v.getName().equals(name)) {
+				return v;
+			}
+		}
+		return new Variable("Null").setData("Null");
+	}
 
 	public int getCurrentCostume() {
 		return currentCostume;
 	}
 
 	public void setCurrentCostume(int currentCostume) {
-		this.currentCostume = currentCostume;
+		this.currentCostume = currentCostume%costumes.size();
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public void setX(int x) {
+	public void setX(double x) {
 		this.x = x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
 
-	public void setY(int y) {
+	public void setY(double y) {
 		this.y = y;
 	}
 
@@ -92,6 +108,18 @@ public class Sprite {
 
 	public void setPenDown(boolean penDown) {
 		this.penDown = penDown;
+	}
+
+	public double getDirection() {
+		return direction;
+	}
+
+	public void setDirection(double direction) {
+		this.direction = direction;
+	}
+
+	public List<Image> getCostumes() {
+		return costumes;
 	}
 	
 }
